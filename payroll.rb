@@ -7,21 +7,16 @@ require_relative 'sales_bonus'
 require_relative 'sales_commission'
 require_relative 'sales_data_loader'
 
-
-
-
-
-
 company = EmployeeLoader.new("employees.csv")
-
-company.employees.each do |person|
-  puts "#{person.firstname} #{person.lastname}, #{person.role}"
-end
 
 this_month = SalesDataLoader.new("salesdata.csv")
 
-puts this_month.sales.keys
+company.employees.each do |person|
+  if person.role == :owner || person.role == :sales_bonus || person.role == :sales_commission
+    person.gross_sales(this_month.sales)
+  end
+end
 
+# binding.pry
 
-
-binding.pry
+company.employees.each { |person| person.display }

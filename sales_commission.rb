@@ -29,12 +29,12 @@ class SalesCommission < Employee
   end
 
   def gross_pay
-
     @rough_gross = (((@base * 1000.0)/12.0) + @rough_com).to_f.round(2)
     @gross_pay = "%.2f" % @rough_gross
   end
 
   def display
+    self.commission
     puts "--- #{firstname} #{lastname} ---"
     puts "Gross Salary: $#{gross_pay}"
     puts "Commission: $#{commission}"
