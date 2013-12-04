@@ -38,7 +38,7 @@ class SalesBonus < Employee
   def display
     puts "--- #{firstname} #{lastname} ---"
     puts "Gross Salary: $#{gross_pay}"
-    puts "Bonus: #{bonus}" if self.quota?
+    puts "Bonus: $#{bonus}" if self.quota?
     puts "Net Pay: $#{net_pay}"
     puts "---"
     puts ""
