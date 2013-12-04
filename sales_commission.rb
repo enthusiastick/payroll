@@ -19,6 +19,7 @@ class SalesCommission < Employee
     else
       @gross = 0
     end
+    self.commission
     @gross
   end
 
@@ -34,7 +35,6 @@ class SalesCommission < Employee
   end
 
   def display
-    self.commission
     puts "--- #{firstname} #{lastname} ---"
     puts "Gross Salary: $#{gross_pay}"
     puts "Commission: $#{commission}"
