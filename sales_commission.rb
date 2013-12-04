@@ -12,4 +12,18 @@ class Sales_Commission < Employee
     @percentage = percentage
   end
 
+
+  def gross_sales(saleshash)
+    if saleshash.has_key?(@lastname)
+      @gross = saleshash[@lastname].inject(:+)
+    else
+      @gross = 0
+    end
+    @gross
+  end
+
+  def commission
+    @gross * @percentage
+  end
+
 end

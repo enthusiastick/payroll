@@ -12,4 +12,12 @@ class Owner < Employee
     @company_quota = 250000.0
   end
 
+  def gross_sales(saleshash)
+    @gross = saleshash.values.flatten.inject(:+)
+  end
+
+  def bonus?
+    @gross >= @company_quota
+  end
+
 end
