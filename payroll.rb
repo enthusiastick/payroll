@@ -13,6 +13,8 @@ require_relative 'sales_commission'
 
 x = EmployeeLoader.new("employees.csv")
 
-puts x.employees
+x.employees.each do |person|
+  puts "#{person.firstname} #{person.lastname}, #{person.role}"
+end
 
-binding.pry
+# binding.pry
