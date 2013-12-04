@@ -1,5 +1,3 @@
-require 'pry'
-
 require_relative 'employee'
 require_relative 'employee_loader'
 require_relative 'owner'
@@ -16,7 +14,5 @@ company.employees.each do |person|
     person.gross_sales(this_month.sales)
   end
 end
-
-# binding.pry
 
 company.employees.each { |person| person.display }
