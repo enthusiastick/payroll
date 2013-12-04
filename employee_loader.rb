@@ -16,9 +16,9 @@ class EmployeeLoader
         if row[3] == "Owner"
           @employees << Owner.new(row[0], row[1], row[2].to_i)
         elsif row[3] == "Sales Bonus"
-          @employees << Sales_Bonus.new(row[0], row[1], row[2].to_i, row[4].to_i, row[5].to_i)
+          @employees << SalesBonus.new(row[0], row[1], row[2].to_i, row[4].to_i, row[5].to_i)
         elsif row[3] == "Sales Commission"
-          @employees << Sales_Commission.new(row[0], row[1], row[2].to_i, row[4].to_f)
+          @employees << SalesCommission.new(row[0], row[1], row[2].to_i, row[4].to_f)
         else
           @employees << Employee.new(row[0], row[1], row[2].to_i, row[3].downcase.to_sym)
         end

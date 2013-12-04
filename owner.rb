@@ -29,4 +29,13 @@ class Owner < Employee
     @gross_pay = "%.2f" % @rough_gross
   end
 
+  def display
+    puts "--- #{firstname} #{lastname} ---"
+    puts "Gross Salary: $#{gross_pay}"
+    puts "Bonus: $1000" if self.bonus?
+    puts "Net Pay: $#{net_pay}"
+    puts "---"
+    puts ""
+  end
+
 end

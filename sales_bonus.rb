@@ -1,6 +1,6 @@
 require_relative 'employee'
 
-class Sales_Bonus < Employee
+class SalesBonus < Employee
 
   attr_reader :monthly_quota, :bonus, :gross
 
@@ -33,6 +33,15 @@ class Sales_Bonus < Employee
       @rough_gross = ((@base * 1000.0)/12.0).to_f.round(2)
     end
     @gross_pay = "%.2f" % @rough_gross
+  end
+
+  def display
+    puts "--- #{firstname} #{lastname} ---"
+    puts "Gross Salary: $#{gross_pay}"
+    puts "Bonus: #{bonus}" if self.quota?
+    puts "Net Pay: $#{net_pay}"
+    puts "---"
+    puts ""
   end
 
 end

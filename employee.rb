@@ -24,6 +24,7 @@ class Employee
     puts "Gross Salary: $#{gross_pay}"
     puts "Net Pay: $#{net_pay}"
     puts "---"
+    puts ""
   end
 
 end

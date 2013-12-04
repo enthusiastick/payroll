@@ -1,6 +1,6 @@
 require_relative 'employee'
 
-class Sales_Commission < Employee
+class SalesCommission < Employee
 
   attr_reader :percentage
 
@@ -23,12 +23,24 @@ class Sales_Commission < Employee
   end
 
   def commission
-    @gross * @percentage
+    @rough_com = (@gross * @percentage).to_f
+    @commission = "%.2f" % @rough_com
+    @commission
   end
 
   def gross_pay
-    @rough_gross = (((@base * 1000.0)/12.0) + self.commission).to_f.round(2)
+
+    @rough_gross = (((@base * 1000.0)/12.0) + @rough_com).to_f.round(2)
     @gross_pay = "%.2f" % @rough_gross
+  end
+
+  def display
+    puts "--- #{firstname} #{lastname} ---"
+    puts "Gross Salary: $#{gross_pay}"
+    puts "Commission: $#{commission}"
+    puts "Net Pay: $#{net_pay}"
+    puts "---"
+    puts ""
   end
 
 end
