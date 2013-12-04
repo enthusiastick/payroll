@@ -13,6 +13,5 @@ company.employees.each do |person|
   if person.role == :owner || person.role == :sales_bonus || person.role == :sales_commission
     person.gross_sales(this_month.sales)
   end
+  person.display
 end
-
-company.employees.each { |person| person.display }
