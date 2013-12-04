@@ -26,4 +26,9 @@ class Sales_Commission < Employee
     @gross * @percentage
   end
 
+  def gross_pay
+    @rough_gross = (((@base * 1000.0)/12.0) + self.commission).to_f.round(2)
+    @gross_pay = "%.2f" % @rough_gross
+  end
+
 end

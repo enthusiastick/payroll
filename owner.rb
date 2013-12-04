@@ -22,16 +22,11 @@ class Owner < Employee
 
   def gross_pay
     if self.bonus?
-      @rough_gross = ((@base * 1000) + 1000).round(2)
+      @rough_gross = (((@base * 1000.0)/12.0) + 1000).to_f.round(2)
     else
-      @rough_gross = (@base * 1000).round(2)
+      @rough_gross = ((@base * 1000.0)/12.0).to_f.round(2)
     end
     @gross_pay = "%.2f" % @rough_gross
-  end
-
-  def net_pay
-    rough_net = (@rough_gross * 0.7).round(2)
-    @net_pay = "%.2f" % rough_net
   end
 
 end

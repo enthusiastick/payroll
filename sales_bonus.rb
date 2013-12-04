@@ -26,4 +26,13 @@ class Sales_Bonus < Employee
     @gross >= @monthly_quota
   end
 
+  def gross_pay
+    if self.quota?
+      @rough_gross = (((@base * 1000.0)/12.0) + @bonus).to_f.round(2)
+    else
+      @rough_gross = ((@base * 1000.0)/12.0).to_f.round(2)
+    end
+    @gross_pay = "%.2f" % @rough_gross
+  end
+
 end
